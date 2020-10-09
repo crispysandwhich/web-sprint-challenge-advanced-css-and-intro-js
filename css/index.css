@@ -134,3 +134,34 @@ button:hover{
 .artist img{
     width:100%;
 }
+
+
+/* view port */
+@media(max-width: 500px){
+    a{
+        font-size: 2rem;
+    }
+    /* header */
+    header{
+        width: 100%;
+    }
+    nav{
+        width: 60%;
+    }
+    nav span{
+        border-width: 2px;
+    }
+    /* section title */
+    .title-container,
+    .title-container div,
+    .title-container hr{
+        width: 100%;
+    }
+    /* artist section */
+    .artists-container{
+        flex-direction: column;
+    }
+    .artist{
+        width: 100%;
+    }
+}

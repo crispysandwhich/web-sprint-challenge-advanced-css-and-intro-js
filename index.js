@@ -313,7 +313,6 @@ function lotsOfArt(arr){
 
   for (let i = 0; i < arr.length;i++){
     arr[i].paintings > 100 ? art100.push(arr[i].name) : 0
-
   }
 
   return art100;
