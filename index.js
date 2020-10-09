@@ -230,7 +230,7 @@ Create a function called `getArtistByIndex` that takes two arguments:
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 function getArtistByIndex(arr,index) {
-  return `The artist at index ${index} is ${arr[index].name}`
+  return `the artist at index ${index} is ${arr[index].name}`
 }
 console.log(getArtistByIndex(artists,8))
   
@@ -242,9 +242,7 @@ function get20s(arr){
   const peoples = [];
   for (let i = 0; i < arr.length;i++){
     const peopleYear = arr[i].years.split('-');
-    // peoples.push(peopleYear)
-    // console.log(typeof(peopleYear[0]))
-    // console.log(peopleYear)
+
     if(Number(peopleYear[0]) >= 1900 && Number(peopleYear[1]) <= 2000){
       peoples.push(arr[i].name)
     }
@@ -265,10 +263,11 @@ Create a function called `removeArtist` that takes two arguments:
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(arr,index) {
+  arr.splice(index,1);
+  return arr.length
 }
-   
+console.log(removeArtist(artists,0))
 
 /**
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -284,10 +283,20 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/*Your Code Here*/){
-  /*Your Code Here*/
-  }
+function addArtist(arr,id,name,years,genre,nationality,bio){
 
+  arr.push({
+    id,
+    name,
+    years,
+    genre,
+    nationality,
+    bio
+  })
+
+}
+addArtist(artists, artists.length+1,'lyub','1999 - 2000','web dev','Ukrainian','just a dude trying to get through life')
+console.log(artists[19])
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -299,8 +308,15 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(arr){
+  const art100 = [];
+
+  for (let i = 0; i < arr.length;i++){
+    arr[i].paintings > 100 ? art100.push(arr[i].name) : 0
+
+  }
+
+  return art100;
 }
 
 
